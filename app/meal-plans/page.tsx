@@ -14,7 +14,7 @@ export default function MealPlans() {
       protein: '15g',
       price: '₹80',
       items: ['Yellow Dal', 'Steamed Rice', 'Green Chutney', 'Papad'],
-      badge: 'Most Popular',
+      badge: '',
     },
     {
       name: 'Roti Sabzi Set',
@@ -32,7 +32,7 @@ export default function MealPlans() {
       protein: '18g',
       price: '₹95',
       items: ['Rajma Curry', 'Basmati Rice', 'Onion Raita', 'Papad'],
-      badge: 'Fan Favorite',
+      badge: '',
     },
     {
       name: 'Mix Veg + Dal + Rice',
@@ -53,7 +53,7 @@ export default function MealPlans() {
       protein: '45g',
       price: '₹150',
       items: ['200g Grilled Chicken', 'Brown Rice', 'Steamed Broccoli', 'Salad'],
-      badge: 'High Protein',
+      badge: '',
     },
     {
       name: 'Paneer Power Pack',
@@ -62,7 +62,7 @@ export default function MealPlans() {
       protein: '35g',
       price: '₹130',
       items: ['250g Grilled Paneer', 'Quinoa', 'Mixed Veggies', 'Hung Curd'],
-      badge: 'Veg Special',
+      badge: '',
     },
     {
       name: 'Egg White Special',
@@ -71,7 +71,7 @@ export default function MealPlans() {
       protein: '40g',
       price: '₹120',
       items: ['8 Egg Whites', 'Oats', 'Banana', 'Almonds'],
-      badge: 'Lean Protein',
+      badge: '',
     },
     {
       name: 'Chicken + Fish Combo',
@@ -80,7 +80,7 @@ export default function MealPlans() {
       protein: '50g',
       price: '₹180',
       items: ['150g Chicken', '100g Fish', 'Brown Rice', 'Veggies'],
-      badge: 'Beast Mode',
+      badge: '',
     },
   ];
 
@@ -91,7 +91,7 @@ export default function MealPlans() {
       discount: '10%',
       price: '₹1,260',
       originalPrice: '₹1,400',
-      features: ['2 Meals Daily', 'Pick Breakfast/Lunch/Dinner', 'Free Delivery', 'Flexible Menu'],
+      features: ['2 Meals Daily', 'Pick Breakfast/Lunch/Dinner', 'Free Delivery', 'Flexible Menu','Nutrition Consultation'],
     },
     {
       name: 'Monthly Plan',
@@ -277,66 +277,74 @@ export default function MealPlans() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {subscriptionPlans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`card-premium rounded-3xl p-8 relative ${plan.popular ? 'border-2 border-primary shadow-2xl scale-105 z-10' : ''
-                  }`}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-400 to-orange-500 text-black px-6 py-2 rounded-full font-bold text-sm shimmer overflow-hidden">
-                    <span className="relative z-10">MOST POPULAR</span>
-                  </div>
-                )}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+  {subscriptionPlans.map((plan) => (
+    <div
+      key={plan.name}
+      className={`card-premium rounded-3xl p-8 relative h-full flex flex-col
+      ${plan.popular ? 'border-2 border-primary shadow-2xl scale-105 z-10' : ''}`}
+    >
+      {/* Title */}
+      <div className="text-center mb-6">
+        <h3 className="text-3xl font-poppins font-bold mb-2">
+          {plan.name}
+        </h3>
+        <p className="text-muted-foreground">
+          {plan.meals}
+        </p>
+      </div>
 
-                <div className="text-center mb-6">
-                  <h3 className="text-3xl font-poppins font-bold mb-2">{plan.name}</h3>
-                  <p className="text-muted-foreground">{plan.meals}</p>
-                </div>
+      {/* Price */}
+      <div className="text-center mb-6">
+        <div className="flex items-center justify-center space-x-3 mb-2">
+          <span className="text-5xl font-poppins font-bold text-gradient">
+            {plan.price}
+          </span>
+        </div>
 
-                <div className="text-center mb-6">
-                  <div className="flex items-center justify-center space-x-3 mb-2">
-                    <span className="text-5xl font-poppins font-bold text-gradient">
-                      {plan.price}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <span className="text-muted-foreground line-through">{plan.originalPrice}</span>
-                    <span className="bg-green-500 text-black text-xs font-bold px-2 py-1 rounded">
-                      Save {plan.discount}
-                    </span>
-                  </div>
-                </div>
+        <div className="flex items-center justify-center space-x-2">
+          <span className="text-muted-foreground line-through">
+            {plan.originalPrice}
+          </span>
+          <span className="bg-green-500 text-black text-xs font-bold px-2 py-1 rounded">
+            Save {plan.discount}
+          </span>
+        </div>
+      </div>
 
-                <div className="border-t border-white/10 pt-6 mb-6">
-                  <ul className="space-y-4">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
-                          <Check className="w-4 h-4 text-black" />
-                        </div>
-                        <span className="text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <a
-                  href="https://wa.me/919876543210"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center justify-center space-x-2 w-full px-6 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 ${plan.popular
-                    ? 'bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black shadow-lg glow-orange'
-                    : 'glass-effect hover:bg-white/20'
-                    }`}
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>Subscribe Now</span>
-                </a>
+      {/* Features */}
+      <div className="border-t border-white/10 pt-6 mb-6 flex-grow">
+        <ul className="space-y-4">
+          {plan.features.map((feature) => (
+            <li key={feature} className="flex items-center space-x-3">
+              <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                <Check className="w-4 h-4 text-black" />
               </div>
-            ))}
-          </div>
+              <span className="text-foreground">
+                {feature}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* CTA Button */}
+      <a
+        href="https://wa.me/919876543210"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`mt-auto flex items-center justify-center space-x-2 w-full px-6 py-4 rounded-xl 
+        font-semibold text-lg transition-all duration-300 transform hover:scale-105
+        bg-orange-400 hover:bg-orange-500 text-black shadow-md
+        ${plan.popular ? 'shadow-lg glow-orange' : ''}`}
+      >
+        <Phone className="w-5 h-5" />
+        <span>Subscribe Now</span>
+      </a>
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 

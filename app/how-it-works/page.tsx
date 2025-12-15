@@ -115,7 +115,7 @@ export default function HowItWorks() {
                     <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 icon-box-glow group-hover:scale-110 transition-transform`}>
                       <step.icon className="w-10 h-10 text-black" />
                     </div>
-                    <div className="text-6xl md:text-7xl font-poppins font-bold text-orange-500/10 mb-4 group-hover:text-orange-500/20 transition-colors">
+                    <div className="text-6xl md:text-7xl font-poppins font-bold text-orange-500 mb-4 group-hover:text-orange-500/20 transition-colors">
                       {step.number}
                     </div>
                   </div>

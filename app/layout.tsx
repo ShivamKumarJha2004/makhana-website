@@ -17,19 +17,37 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'MAAKHANA - Ghar Ka Khana, Delivered on Your Schedule',
-  description: 'Healthy, home-cooked, affordable meals for Gen-Z, hostel students, working professionals, and gym enthusiasts in Noida & Greater Noida. Zero hassle. Scheduled drops that fit your clock.',
-  keywords: 'home cooked meals, healthy food delivery, noida food, greater noida meals, gym meals, protein food, affordable meals, pg food',
+  description:
+    'Healthy, home-cooked, affordable meals for Gen-Z, hostel students, working professionals, and gym enthusiasts in Noida & Greater Noida. Zero hassle. Scheduled drops that fit your clock.',
+  keywords:
+    'home cooked meals, healthy food delivery, noida food, greater noida meals, gym meals, protein food, affordable meals, pg food',
   authors: [{ name: 'MAAKHANA' }],
+
+  
+ 
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
+    shortcut: '/favicon.ico',
+  },
+
   openGraph: {
     title: 'MAAKHANA - Ghar Ka Khana Delivered',
     description: 'Healthy, home-cooked, affordable meals delivered on your schedule',
     type: 'website',
     locale: 'en_IN',
+    images: ['/icon.png'],
   },
+
   twitter: {
     card: 'summary_large_image',
     title: 'MAAKHANA - Ghar Ka Khana Delivered',
     description: 'Healthy, home-cooked, affordable meals delivered on your schedule',
+    images: ['/icon.png'],
   },
 };
 
@@ -40,7 +58,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

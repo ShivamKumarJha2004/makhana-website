@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Instagram, Facebook, Twitter, Mail, MapPin, Phone, Utensils } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -116,17 +117,66 @@ export default function Footer() {
                 <span>WhatsApp Us</span>
               </a>
 
-              <div className="pt-4 border-t border-orange-200/50">
-                <p className="text-xs text-muted-foreground mb-3 font-semibold">DOWNLOAD APP</p>
-                <div className="flex gap-2">
-                  <button className="bg-black text-white p-2 rounded-lg hover:bg-gray-900 transition-all flexitems-center justify-center flex-1">
-                    <span className="text-xl">🍏</span>
-                  </button>
-                  <button className="bg-black text-white p-2 rounded-lg hover:bg-gray-900 transition-all flex items-center justify-center flex-1">
-                    <span className="text-xl">▶️</span>
-                  </button>
-                </div>
-              </div>
+             <div className="pt-4 border-t border-orange-200/50">
+  <p className="text-xs text-muted-foreground mb-3 font-semibold">
+    DOWNLOAD APP
+  </p>
+
+  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+
+    {/* Apple Store */}
+    <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
+      hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
+      w-56 justify-center">
+
+      <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
+        <Image
+          src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765633044/461-4616252_apple-logo-apple-computer-transparent-iphone-apple-logo_x1t7hy.png"
+          alt="Apple App Store"
+          width={48}
+          height={48}
+          className="object-contain"
+        />
+      </div>
+
+      <div className="text-left leading-tight transition-colors duration-300">
+        <div className="text-xs text-black group-hover:text-white">
+          Download on the
+        </div>
+        <div className="text-lg font-bold text-black group-hover:text-white">
+          App Store
+        </div>
+      </div>
+    </button>
+
+    {/* Google Play */}
+    <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
+      hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
+      w-56 justify-center">
+
+      <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
+        <Image
+          src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765632481/playstore_xpuxlq.jpg"
+          alt="Google Play Store"
+          width={48}
+          height={48}
+          className="object-contain"
+        />
+      </div>
+
+      <div className="text-left leading-tight transition-colors duration-300">
+        <div className="text-xs text-black group-hover:text-white">
+          GET IT ON
+        </div>
+        <div className="text-lg font-bold text-black group-hover:text-white">
+          Google Play
+        </div>
+      </div>
+    </button>
+
+  </div>
+</div>
+
             </div>
           </div>
         </div>

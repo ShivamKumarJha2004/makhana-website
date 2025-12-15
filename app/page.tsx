@@ -4,6 +4,7 @@ import { ArrowRight, Sunrise, Utensils, Moon, Flame, Heart, Clock, DollarSign, S
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function Home() {
   const deliveryTimeline = [
@@ -304,22 +305,66 @@ export default function Home() {
             Get exclusive app-only discounts, track your delivery in real-time, and manage your subscription with ease.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl w-48 justify-center group">
-              <div className="text-2xl group-hover:animate-bounce">🍏</div>
-              <div className="text-left">
-                <div className="text-xs text-gray-400">Download on the</div>
-                <div className="text-lg font-bold leading-none">App Store</div>
-              </div>
-            </button>
-            <button className="flex items-center space-x-3 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl w-48 justify-center group">
-              <div className="text-2xl group-hover:animate-bounce">▶️</div>
-              <div className="text-left">
-                <div className="text-xs text-gray-400">GET IT ON</div>
-                <div className="text-lg font-bold leading-none">Google Play</div>
-              </div>
-            </button>
+    
+                 <div className="pt-4 border-t border-orange-200/50">
+      <p className="text-xs text-muted-foreground mb-3 font-semibold">
+        DOWNLOAD APP
+      </p>
+    
+      <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+    
+        {/* Apple Store */}
+        <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
+          hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
+          w-56 justify-center">
+    
+          <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
+            <Image
+              src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765633044/461-4616252_apple-logo-apple-computer-transparent-iphone-apple-logo_x1t7hy.png"
+              alt="Apple App Store"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
           </div>
+    
+          <div className="text-left leading-tight transition-colors duration-300">
+            <div className="text-xs text-black group-hover:text-white">
+              Download on the
+            </div>
+            <div className="text-lg font-bold text-black group-hover:text-white">
+              App Store
+            </div>
+          </div>
+        </button>
+    
+        {/* Google Play */}
+        <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
+          hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
+          w-56 justify-center">
+    
+          <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
+            <Image
+              src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765632481/playstore_xpuxlq.jpg"
+              alt="Google Play Store"
+              width={48}
+              height={48}
+              className="object-contain"
+            />
+          </div>
+    
+          <div className="text-left leading-tight transition-colors duration-300">
+            <div className="text-xs text-black group-hover:text-white">
+              GET IT ON
+            </div>
+            <div className="text-lg font-bold text-black group-hover:text-white">
+              Google Play
+            </div>
+          </div>
+        </button>
+    
+      </div>
+    </div>
         </div>
       </section>
 
