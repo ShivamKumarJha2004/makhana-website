@@ -81,25 +81,25 @@ export default function ContactPage() {
       {/* Hero Section */}
       <Navbar/> 
      
-      <section className="relative bg-gradient-to-br from-orange-500 to-amber-500 pt-32 pb-20 px-6 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-orange-500 to-amber-500 pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 text-white leading-tight">
             Let&apos;s Talk! 💬
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
             Got questions? Ideas? Just wanna say hi? We&apos;re all ears. Hit us up anytime!
           </p>
         </div>
       </section>
 
       {/* Contact Cards */}
-      <section className="py-20 px-6 -mt-10 relative z-10">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 -mt-6 sm:-mt-10 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, idx) => (
               <Link
                 key={idx}
@@ -119,14 +119,14 @@ export default function ContactPage() {
       </section>
 
       {/* B2B & B2C Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Who We Serve 🎯</h2>
             <p className="text-xl text-gray-600">From individuals to enterprises, we&apos;ve got everyone covered</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* B2C Card */}
             <div className="bg-white rounded-3xl p-10 border-2 border-orange-200 hover:border-orange-400 transition-all duration-300 shadow-lg hover:shadow-2xl">
               <div className="bg-orange-100 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
@@ -233,7 +233,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Content - Form + Info */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -245,7 +245,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="space-y-6">
+                <div className="space-y-5 sm:space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
                     Your Name *
@@ -378,19 +378,19 @@ export default function ContactPage() {
               </div>
 
               {/* Social Links */}
-              <div className="bg-white p-8 rounded-2xl border border-gray-200">
+              <div className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-200">
                 <h3 className="text-xl font-bold mb-4 text-gray-900">Follow the Vibe 🔥</h3>
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <Link
                     href="#"
-                    className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                    className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-pink-500 to-orange-500 text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     <Instagram className="w-5 h-5" />
                     Instagram
                   </Link>
                   <Link
                     href="#"
-                    className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                    className="flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
                   >
                     <Facebook className="w-5 h-5" />
                     Facebook
@@ -402,13 +402,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-gray-200 bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center text-gray-500">
-          <p className="text-lg">Made with 🧡 in Greater Noida</p>
-          <p className="mt-2">Maakhana © 2024. All rights reserved.</p>
-        </div>
-      </footer>
+      
       <Footer/>
     </div>
   );

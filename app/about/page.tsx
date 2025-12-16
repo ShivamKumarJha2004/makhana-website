@@ -57,7 +57,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-gray-100 text-gray-900">
         <Navbar />
       {/* Hero */}
-      <section className="relative overflow-hidden pt-32 pb-20 px-6 bg-white">
+      <section className="relative overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 bg-white">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-amber-500/5 blur-3xl" />
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-orange-100 px-6 py-2 rounded-full mb-6 border border-orange-200">
@@ -67,14 +67,14 @@ export default function AboutPage() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
             We&apos;re Not Just a
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
               Food Service
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We&apos;re a movement to fix how next-gen hustlers eats. No more oily mess hall
             food. No more overpriced delivery apps. Just honest, home-cooked
             meals that fuel your grind.
@@ -83,14 +83,14 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="py-20 px-6">
+      <section className="py-16 sm:py-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-3xl p-10 md:p-16 border border-gray-200 shadow-xl">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 md:p-16 border border-gray-200 shadow-xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-orange-500">
               The Story 📖
             </h2>
 
-            <div className="space-y-6 text-lg md:text-xl text-gray-700 leading-relaxed">
+            <div className="space-y-5 sm:space-y-6 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
               <p>
                 Living in Noida or Greater Noida as a student or young
                 professional? It&apos;s a vibe… until your food options suck.
@@ -116,7 +116,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -127,7 +127,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((item, i) => (
               <div
                 key={i}
@@ -143,7 +143,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">
             The Journey 🚀
@@ -166,22 +166,22 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-20 px-6 bg-gradient-to-br from-orange-50 to-amber-50">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-orange-50 to-amber-50">
         <div className="max-w-4xl mx-auto text-center">
           <TrendingUp className="w-16 h-16 text-orange-500 mx-auto mb-6" />
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Our Mission 🎯
           </h2>
-          <p className="text-2xl md:text-3xl text-gray-700 font-medium">
+          <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 font-medium">
             Make healthy, affordable, home-cooked food the default choice in NCR.
           </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl p-12 text-center shadow-2xl">
+          <div className="bg-gradient-to-r from-orange-500 to-amber-500 rounded-3xl p-8 sm:p-12 text-center shadow-2xl">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Ready to Join the Fam?
             </h2>
@@ -208,13 +208,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t bg-gray-50">
-        <div className="max-w-6xl mx-auto text-center text-gray-500">
-          <p className="text-lg">Made with 🧡 in Greater Noida</p>
-          <p className="mt-2">Maakhana © 2024</p>
-        </div>
-      </footer>
+     
       <Footer />
     </main>
   );
