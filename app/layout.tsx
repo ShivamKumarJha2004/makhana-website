@@ -18,7 +18,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'MAAKHANA - Ghar Ka Khana, Delivered on Your Schedule',
   description:
-    'Healthy, home-cooked, affordable meals for Gen-Z, hostel students, working professionals, and gym enthusiasts in Noida & Greater Noida. Zero hassle. Scheduled drops that fit your clock.',
+    'Healthy, home-cooked, affordable meals for next-gen hustlers, hostel students, working professionals, and gym enthusiasts in Noida & Greater Noida. Zero hassle. Scheduled drops that fit your clock.',
   keywords:
     'home cooked meals, healthy food delivery, noida food, greater noida meals, gym meals, protein food, affordable meals, pg food',
   authors: [{ name: 'MAAKHANA' }],

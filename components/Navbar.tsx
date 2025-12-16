@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Navbar() {
@@ -19,9 +19,11 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
     { href: '/meal-plans', label: 'Meal Plans' },
     { href: '/how-it-works', label: 'How It Works' },
     { href: '/survey', label: 'Early Access' },
+   { href: '/contact_us', label: 'Contact Us' },
   ];
 
   return (
@@ -60,15 +62,26 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            <Link
-              href="https://maakhana-survey.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black px-6 py-2.5 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg pulse-glow btn-shine"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Order Now</span>
-            </Link>
+           <ul className="space-y-3">
+              <li>
+                <Link
+                  href="tel:+919315709293"
+                  className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>+91 9315709293</span>
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@maakhana.com"
+                  className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>hello@maakhana.com</span>
+                </a>
+              </li>
+            </ul>
           </div>
 
           <button

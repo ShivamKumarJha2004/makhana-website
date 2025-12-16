@@ -1,6 +1,16 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@font-face {
+  font-family: 'Liquid Glass';
+  src: url('/fonts/LiquidGlass-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @layer base {
   :root {
@@ -24,16 +34,19 @@
     --input: 30 20% 90%;
     --ring: 24 100% 50%;
     --radius: 1rem;
+    --font-liquidglass: 'Liquid Glass';
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-liquidglass),;
   }
 
   h1,
@@ -42,7 +55,8 @@
   h4,
   h5,
   h6 {
-    @apply font-poppins font-bold;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
   }
 
   html {
@@ -50,7 +64,7 @@
   }
 }
 
-/* Custom Keyframe Animations */
+
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -145,11 +159,17 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 bg-clip-text text-transparent;
+background: linear-gradient(to right, #f97316, #ea580c, #ef4444);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
   }
 
   .glass-effect {
-    @apply bg-white/80 backdrop-blur-md border border-orange-100 shadow-lg;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(251, 146, 60, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   }
 
   .glow-orange {
@@ -158,7 +178,12 @@
 
   /* Premium Card Styles */
   .card-premium {
-    @apply relative bg-white/90 backdrop-blur-xl border border-orange-100 overflow-hidden shadow-xl;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border: 1px solid #fed7aa;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -181,7 +206,7 @@
   }
 
   .card-premium:hover {
-    @apply border-orange-400/30;
+    border: 1px solid rgba(251, 146, 60, 0.3);
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 25px 50px -12px rgba(251, 146, 60, 0.15);
   }
@@ -282,7 +307,10 @@
 
   /* Decorative Orbs */
   .orb {
-    @apply absolute rounded-full blur-3xl pointer-events-none;
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(64px);
+    pointer-events: none;
   }
 
   .orb-orange {
@@ -351,7 +379,7 @@
 
   /* Icon Box with Glow */
   .icon-box-glow {
-    @apply relative;
+position: relative;
     box-shadow: 0 0 0 0 rgba(251, 146, 60, 0);
     transition: box-shadow 0.3s ease;
   }

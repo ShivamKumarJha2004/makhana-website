@@ -203,15 +203,15 @@ export default function HowItWorks() {
             <p className="text-xl text-muted-foreground mb-8">
               Hit us up on WhatsApp. We're here to help!
             </p>
-            <a
-              href="https://wa.me/919876543210"
+            <Link
+              href="https://maakhana-survey.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl pulse-glow btn-shine"
             >
               <span>Chat With Us</span>
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -119,7 +119,7 @@ export default function MealPlans() {
             <span className="text-gradient text-glow">Meal Plans</span> That Slap
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Choose your vibe. Home-style comfort or gym bro gains.
+          Choose your vibe. Home-style comfort or power-packed nutrition.
           </p>
         </div>
       </section>
@@ -200,7 +200,7 @@ export default function MealPlans() {
           <div className="flex items-center justify-center space-x-4 mb-12">
             <Flame className="w-10 h-10 text-primary" />
             <h2 className="text-4xl md:text-5xl font-poppins font-bold text-center">
-              Gym Bro Protein Packs
+              High-Protein Power Pack
             </h2>
           </div>
           <p className="text-center text-muted-foreground text-xl mb-12">

@@ -1,5 +1,7 @@
 'use client';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 import { ArrowRight, Sunrise, Utensils, Moon, Flame, Heart, Clock, DollarSign, Shield, Star, Check, X, IndianRupee } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
@@ -40,7 +42,7 @@ export default function Home() {
       color: 'orange',
     },
     {
-      title: 'Gym Bro Protein Packs',
+      title: 'High-Protein Power Pack',
       description: 'Chasing gains? High-protein meals designed for your fitness goals.',
       features: ['35g+ Protein', 'Lean Meats', 'Controlled Carbs', 'Meal Prep Done'],
       icon: Flame,
@@ -67,25 +69,128 @@ export default function Home() {
   ];
 
   const testimonials = [
-    {
-      name: 'Rahul S.',
-      role: 'Engineering Student',
-      text: 'Finally found food that tastes like home. No more oily PG mess food!',
-      rating: 5,
-    },
-    {
-      name: 'Priya M.',
-      role: 'Working Professional',
-      text: 'The protein meals are perfect for my gym routine. Affordable and tasty!',
-      rating: 5,
-    },
-    {
-      name: 'Arjun K.',
-      role: 'PG Resident',
-      text: 'Delivery is always on time. Best decision for my daily meals.',
-      rating: 5,
-    },
-  ];
+  {
+    name: 'Rahul S.',
+    role: 'Engineering Student',
+    text: 'Finally found food that tastes like home. No more oily PG mess food!',
+    rating: 5,
+  },
+  {
+    name: 'Priya M.',
+    role: 'Working Professional',
+    text: 'The protein meals are perfect for my fitness routine. Affordable and tasty!',
+    rating: 5,
+  },
+  {
+    name: 'Arjun K.',
+    role: 'PG Resident',
+    text: 'Delivery is always on time. Best decision for my daily meals.',
+    rating: 5,
+  },
+  {
+    name: 'Neha T.',
+    role: 'MBA Student',
+    text: 'Healthy, filling, and ghar-jaisa taste. Exactly what I needed.',
+    rating: 5,
+  },
+  {
+    name: 'Amit R.',
+    role: 'Software Developer',
+    text: 'Saves me so much time after work. Clean food and great portions.',
+    rating: 5,
+  },
+  {
+    name: 'Pooja K.',
+    role: 'Hostel Student',
+    text: 'Way better than hostel food. Feels like mom’s cooking.',
+    rating: 5,
+  },
+  {
+    name: 'Rohit V.',
+    role: 'Fitness Enthusiast',
+    text: 'High-protein meals actually keep me full and energized.',
+    rating: 5,
+  },
+  {
+    name: 'Sneha J.',
+    role: 'Content Creator',
+    text: 'Love the consistency and quality. No more random ordering.',
+    rating: 5,
+  },
+  {
+    name: 'Kunal P.',
+    role: 'CA Aspirant',
+    text: 'Perfect meals during long study hours. Light and nutritious.',
+    rating: 5,
+  },
+  {
+    name: 'Anjali D.',
+    role: 'HR Executive',
+    text: 'Affordable monthly plans and zero hassle. Totally worth it.',
+    rating: 5,
+  },
+  {
+    name: 'Vikas N.',
+    role: 'Startup Founder',
+    text: 'Reliable food during crazy workdays. Taste never disappoints.',
+    rating: 5,
+  },
+  {
+    name: 'Simran A.',
+    role: 'Design Student',
+    text: 'Healthy meals without cooking stress. Big win for me.',
+    rating: 5,
+  },
+  {
+    name: 'Manish G.',
+    role: 'Sales Executive',
+    text: 'Good portions and consistent taste. Much better than delivery apps.',
+    rating: 5,
+  },
+  {
+    name: 'Isha B.',
+    role: 'Law Student',
+    text: 'Light, balanced meals that don’t make me feel lazy.',
+    rating: 5,
+  },
+  {
+    name: 'Nikhil C.',
+    role: 'Digital Marketer',
+    text: 'Scheduled delivery is a game-changer. Food is always fresh.',
+    rating: 5,
+  },
+  {
+    name: 'Riya S.',
+    role: 'BBA Student',
+    text: 'Super affordable and tasty. Perfect for student life.',
+    rating: 5,
+  },
+  {
+    name: 'Saurabh L.',
+    role: 'Gym Trainer',
+    text: 'Clean ingredients and solid protein options. Highly recommended.',
+    rating: 5,
+  },
+  {
+    name: 'Megha P.',
+    role: 'PG Resident',
+    text: 'No more worrying about lunch and dinner. Totally stress-free.',
+    rating: 5,
+  },
+  {
+    name: 'Akash Y.',
+    role: 'Operations Executive',
+    text: 'Feels like home food even after long office hours.',
+    rating: 5,
+  },
+  {
+    name: 'Tanvi R.',
+    role: 'Psychology Student',
+    text: 'Balanced meals that actually make you feel good.',
+    rating: 5,
+  }
+]
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -112,9 +217,9 @@ export default function Home() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <div className="animate-slide-up">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-poppins font-bold mb-6 leading-tight">
-              <span className="text-gradient text-glow">Ghar ka Khana,</span>
+              <span className="liquid-glass-text  text-glow">Ghar ka Khana,</span>
               <br />
-              <span className="text-foreground">delivered on your schedule.</span>
+              <span className="liquid-glass-text text-foreground">delivered on your schedule.</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed opacity-0 animate-slide-up stagger-2">
               Home cooked meals. Zero hassle. Scheduled drops that fit your clock.
@@ -320,30 +425,54 @@ export default function Home() {
               No cap. Just honest reviews.
             </p>
           </div>
+<Swiper
+  modules={[Autoplay]}
+  loop={true}
+  spaceBetween={32}
+  autoplay={{
+    delay: 1500,
+    disableOnInteraction: false,
+  }}
+  slidesPerView={1}
+  breakpoints={{
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  }}
+>
+  {testimonials.map((testimonial, index) => (
+    <SwiperSlide key={index}>
+      <div className="card-premium p-8 rounded-2xl h-full">
+        <div className="flex mb-4">
+          {[...Array(testimonial.rating)].map((_, i) => (
+            <Star
+              key={i}
+              className="w-5 h-5 fill-orange-500 text-orange-500"
+            />
+          ))}
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.name}
-                className="card-premium p-8 rounded-2xl"
-              >
-                <div className="flex mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-orange-500 text-orange-500" />
-                  ))}
-                </div>
-                <p className="text-foreground mb-6 text-lg leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-                <div>
-                  <p className="font-poppins font-semibold text-foreground">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <p className="text-foreground mb-6 text-lg leading-relaxed">
+          “{testimonial.text}”
+        </p>
+
+        <div>
+          <p className="font-poppins font-semibold text-foreground">
+            {testimonial.name}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {testimonial.role}
+          </p>
+        </div>
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+
+
         </div>
       </section>
 
