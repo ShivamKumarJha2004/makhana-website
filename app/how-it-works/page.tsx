@@ -4,37 +4,43 @@ import { Search, Clock, CheckCircle, Repeat, MapPin, Shield, ThumbsUp, ArrowRigh
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PickYourMeal from '@/components/PickYourMeal';
+import PickYourTime from '@/components/PickYourTime';
+import EatStressFree from '@/components/EatStressFree';
+import RepeatDaily from '@/components/RepeatDaily';
+
+
 
 export default function HowItWorks() {
   const steps = [
-    {
-      number: '01',
-      icon: Search,
-      title: 'Pick Your Meal',
-      description: 'Browse home-style comfort food or high-protein gym meals. Choose what fits your vibe.',
-      color: 'from-orange-300 to-orange-400',
-    },
-    {
-      number: '02',
-      icon: Clock,
-      title: 'Pick Your Time',
-      description: 'Select breakfast (7-9 AM), lunch (12-2 PM), or dinner (7-9 PM). Your schedule, your rules.',
-      color: 'from-orange-400 to-orange-500',
-    },
-    {
-      number: '03',
-      icon: CheckCircle,
-      title: 'Eat Stress-Free',
-      description: 'Hot, fresh, hygienic meals delivered right to your door. No surge pricing. No BS.',
-      color: 'from-orange-500 to-red-500',
-    },
-    {
-      number: '04',
-      icon: Repeat,
-      title: 'Repeat Daily',
-      description: 'Subscribe for weekly or monthly plans and save big. One less thing to worry about.',
-      color: 'from-red-500 to-red-600',
-    },
+     {
+    number: '01',
+    title: 'Pick Your Meal',
+    description:
+      'Browse home-style comfort food or high-protein gym meals. Choose what fits your vibe.',
+    component: PickYourMeal,
+  },
+  {
+    number: '02',
+    title: 'Pick Your Time',
+    description:
+      'Select breakfast (7-9 AM), lunch (12-2 PM), or dinner (7-9 PM). Your schedule, your rules.',
+    component: PickYourTime,
+  },
+  {
+    number: '03',
+    title: 'Eat Stress-Free',
+    description:
+      'Hot, fresh, hygienic meals delivered right to your door. No surge pricing. No BS.',
+    component: EatStressFree,
+  },
+  {
+    number: '04',
+    title: 'Repeat Daily',
+    description:
+      'Subscribe for weekly or monthly plans and save big. One less thing to worry about.',
+    component: RepeatDaily,
+  },
   ];
 
   const features = [
@@ -101,39 +107,45 @@ export default function HowItWorks() {
           </p>
         </div>
       </section>
+        
+     <section className="py-20 px-4 sm:px-6 lg:px-8">
+  <div className="max-w-6xl mx-auto">
+    <div className="space-y-16">
+      {steps.map((step, index) => {
+        const StepComponent = step.component;
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="space-y-16">
-            {steps.map((step, index) => (
-              <div
-                key={step.number}
-                className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
-              >
-                <div className={`flex-shrink-0 w-full md:w-1/3 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                  <div className="card-premium p-8 rounded-3xl group">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 icon-box-glow group-hover:scale-110 transition-transform`}>
-                      <step.icon className="w-10 h-10 text-black" />
-                    </div>
-                    <div className="text-6xl md:text-7xl font-poppins font-bold text-orange-500 mb-4 group-hover:text-orange-500/20 transition-colors">
-                      {step.number}
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`flex-1 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                  <h3 className="text-3xl md:text-4xl font-poppins font-bold mb-4">
-                    {step.title}
-                  </h3>
-                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
+        return (
+          <div
+            key={step.number}
+            className="flex flex-col md:flex-row items-center gap-8 md:gap-12"
+          >
+            {/* LEFT BOX */}
+            <div
+              className={`flex-shrink-0 w-full md:w-1/3 ${
+                index % 2 === 1 ? 'md:order-2' : ''
+              }`}
+            >
+              <div className="card-premium p-6 rounded-3xl min-h-[260px] flex items-center justify-center">
+                <StepComponent />
               </div>
-            ))}
+            </div>
+
+            {/* RIGHT CONTENT */}
+            <div className={`flex-1 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
+              <h3 className="text-3xl md:text-4xl font-poppins font-bold mb-4">
+                {step.title}
+              </h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                {step.description}
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-orange-500/10">
         <div className="max-w-7xl mx-auto">

@@ -17,6 +17,13 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
@@ -28,7 +35,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isOpen
         ? 'bg-white/95 backdrop-blur-lg border-b border-orange-100 shadow-lg'
         : 'bg-transparent'
         }`}
@@ -87,6 +94,8 @@ export default function Navbar() {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-foreground p-2 rounded-lg hover:bg-white/5 transition-colors"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -94,8 +103,8 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-lg border-b border-orange-100 shadow-lg">
-          <div className="px-4 py-6 space-y-4">
+        <div id="mobile-menu" className="md:hidden bg-white/95 backdrop-blur-lg border-b border-orange-100 shadow-lg">
+          <div className="px-4 py-6 space-y-4 max-h-[calc(100vh-80px)] overflow-y-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -106,6 +115,22 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <Link
+                href="tel:+919315709293"
+                className="flex items-center justify-center space-x-2 bg-gray-900 text-white px-4 py-3 rounded-full font-semibold w-full"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Call</span>
+              </Link>
+              <a
+                href="mailto:hello@maakhana.com"
+                className="flex items-center justify-center space-x-2 bg-white border border-gray-200 text-gray-900 px-4 py-3 rounded-full font-semibold w-full"
+              >
+                <Mail className="w-4 h-4" />
+                <span>Email</span>
+              </a>
+            </div>
             <Link
               href="https://maakhana-survey.vercel.app/"
               target="_blank"
