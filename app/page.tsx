@@ -69,127 +69,127 @@ export default function Home() {
   ];
 
   const testimonials = [
-  {
-    name: 'Rahul S.',
-    role: 'Engineering Student',
-    text: 'Finally found food that tastes like home. No more oily PG mess food!',
-    rating: 5,
-  },
-  {
-    name: 'Priya M.',
-    role: 'Working Professional',
-    text: 'The protein meals are perfect for my fitness routine. Affordable and tasty!',
-    rating: 5,
-  },
-  {
-    name: 'Arjun K.',
-    role: 'PG Resident',
-    text: 'Delivery is always on time. Best decision for my daily meals.',
-    rating: 5,
-  },
-  {
-    name: 'Neha T.',
-    role: 'MBA Student',
-    text: 'Healthy, filling, and ghar-jaisa taste. Exactly what I needed.',
-    rating: 5,
-  },
-  {
-    name: 'Amit R.',
-    role: 'Software Developer',
-    text: 'Saves me so much time after work. Clean food and great portions.',
-    rating: 5,
-  },
-  {
-    name: 'Pooja K.',
-    role: 'Hostel Student',
-    text: 'Way better than hostel food. Feels like mom’s cooking.',
-    rating: 5,
-  },
-  {
-    name: 'Rohit V.',
-    role: 'Fitness Enthusiast',
-    text: 'High-protein meals actually keep me full and energized.',
-    rating: 5,
-  },
-  {
-    name: 'Sneha J.',
-    role: 'Content Creator',
-    text: 'Love the consistency and quality. No more random ordering.',
-    rating: 5,
-  },
-  {
-    name: 'Kunal P.',
-    role: 'CA Aspirant',
-    text: 'Perfect meals during long study hours. Light and nutritious.',
-    rating: 5,
-  },
-  {
-    name: 'Anjali D.',
-    role: 'HR Executive',
-    text: 'Affordable monthly plans and zero hassle. Totally worth it.',
-    rating: 5,
-  },
-  {
-    name: 'Vikas N.',
-    role: 'Startup Founder',
-    text: 'Reliable food during crazy workdays. Taste never disappoints.',
-    rating: 5,
-  },
-  {
-    name: 'Simran A.',
-    role: 'Design Student',
-    text: 'Healthy meals without cooking stress. Big win for me.',
-    rating: 5,
-  },
-  {
-    name: 'Manish G.',
-    role: 'Sales Executive',
-    text: 'Good portions and consistent taste. Much better than delivery apps.',
-    rating: 5,
-  },
-  {
-    name: 'Isha B.',
-    role: 'Law Student',
-    text: 'Light, balanced meals that don’t make me feel lazy.',
-    rating: 5,
-  },
-  {
-    name: 'Nikhil C.',
-    role: 'Digital Marketer',
-    text: 'Scheduled delivery is a game-changer. Food is always fresh.',
-    rating: 5,
-  },
-  {
-    name: 'Riya S.',
-    role: 'BBA Student',
-    text: 'Super affordable and tasty. Perfect for student life.',
-    rating: 5,
-  },
-  {
-    name: 'Saurabh L.',
-    role: 'Gym Trainer',
-    text: 'Clean ingredients and solid protein options. Highly recommended.',
-    rating: 5,
-  },
-  {
-    name: 'Megha P.',
-    role: 'PG Resident',
-    text: 'No more worrying about lunch and dinner. Totally stress-free.',
-    rating: 5,
-  },
-  {
-    name: 'Akash Y.',
-    role: 'Operations Executive',
-    text: 'Feels like home food even after long office hours.',
-    rating: 5,
-  },
-  {
-    name: 'Tanvi R.',
-    role: 'Psychology Student',
-    text: 'Balanced meals that actually make you feel good.',
-    rating: 5,
-  }
-]
+    {
+      name: 'Rahul S.',
+      role: 'Engineering Student',
+      text: 'Finally found food that tastes like home. No more oily PG mess food!',
+      rating: 5,
+    },
+    {
+      name: 'Priya M.',
+      role: 'Working Professional',
+      text: 'The protein meals are perfect for my fitness routine. Affordable and tasty!',
+      rating: 5,
+    },
+    {
+      name: 'Arjun K.',
+      role: 'PG Resident',
+      text: 'Delivery is always on time. Best decision for my daily meals.',
+      rating: 5,
+    },
+    {
+      name: 'Neha T.',
+      role: 'MBA Student',
+      text: 'Healthy, filling, and ghar-jaisa taste. Exactly what I needed.',
+      rating: 5,
+    },
+    {
+      name: 'Amit R.',
+      role: 'Software Developer',
+      text: 'Saves me so much time after work. Clean food and great portions.',
+      rating: 5,
+    },
+    {
+      name: 'Pooja K.',
+      role: 'Hostel Student',
+      text: 'Way better than hostel food. Feels like mom’s cooking.',
+      rating: 5,
+    },
+    {
+      name: 'Rohit V.',
+      role: 'Fitness Enthusiast',
+      text: 'High-protein meals actually keep me full and energized.',
+      rating: 5,
+    },
+    {
+      name: 'Sneha J.',
+      role: 'Content Creator',
+      text: 'Love the consistency and quality. No more random ordering.',
+      rating: 5,
+    },
+    {
+      name: 'Kunal P.',
+      role: 'CA Aspirant',
+      text: 'Perfect meals during long study hours. Light and nutritious.',
+      rating: 5,
+    },
+    {
+      name: 'Anjali D.',
+      role: 'HR Executive',
+      text: 'Affordable monthly plans and zero hassle. Totally worth it.',
+      rating: 5,
+    },
+    {
+      name: 'Vikas N.',
+      role: 'Startup Founder',
+      text: 'Reliable food during crazy workdays. Taste never disappoints.',
+      rating: 5,
+    },
+    {
+      name: 'Simran A.',
+      role: 'Design Student',
+      text: 'Healthy meals without cooking stress. Big win for me.',
+      rating: 5,
+    },
+    {
+      name: 'Manish G.',
+      role: 'Sales Executive',
+      text: 'Good portions and consistent taste. Much better than delivery apps.',
+      rating: 5,
+    },
+    {
+      name: 'Isha B.',
+      role: 'Law Student',
+      text: 'Light, balanced meals that don’t make me feel lazy.',
+      rating: 5,
+    },
+    {
+      name: 'Nikhil C.',
+      role: 'Digital Marketer',
+      text: 'Scheduled delivery is a game-changer. Food is always fresh.',
+      rating: 5,
+    },
+    {
+      name: 'Riya S.',
+      role: 'BBA Student',
+      text: 'Super affordable and tasty. Perfect for student life.',
+      rating: 5,
+    },
+    {
+      name: 'Saurabh L.',
+      role: 'Gym Trainer',
+      text: 'Clean ingredients and solid protein options. Highly recommended.',
+      rating: 5,
+    },
+    {
+      name: 'Megha P.',
+      role: 'PG Resident',
+      text: 'No more worrying about lunch and dinner. Totally stress-free.',
+      rating: 5,
+    },
+    {
+      name: 'Akash Y.',
+      role: 'Operations Executive',
+      text: 'Feels like home food even after long office hours.',
+      rating: 5,
+    },
+    {
+      name: 'Tanvi R.',
+      role: 'Psychology Student',
+      text: 'Balanced meals that actually make you feel good.',
+      rating: 5,
+    }
+  ]
 
 
   return (
@@ -197,53 +197,99 @@ export default function Home() {
       <Navbar />
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 noise-overlay">
-        {/* Decorative Orbs */}
-        <div className="orb orb-orange w-96 h-96 -top-48 -left-48 opacity-60"></div>
-        <div className="orb orb-amber w-80 h-80 top-1/4 -right-40 opacity-40"></div>
-        <div className="orb orb-orange w-64 h-64 bottom-20 left-1/4 opacity-30"></div>
+        {/* Hero Poster Background */}
+        <div className="absolute inset-0 z-0">
+          {/* Desktop Poster */}
+          <div className="hidden md:block absolute inset-0">
+            <Image
+              src="/poster.png"
+              alt="Hero Poster Desktop"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+          {/* Mobile Poster */}
+          <div className="block md:hidden absolute inset-0">
+            <Image
+              src="/mobile_poster.png"
+              alt="Hero Poster Mobile"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-black/10"></div>
+        </div>
 
-        {/* Floating Food Emojis */}
-        <div className="absolute top-32 left-[10%] text-5xl float-slow opacity-60 hidden md:block">🍛</div>
-        <div className="absolute top-48 right-[15%] text-4xl float-medium opacity-50 hidden md:block" style={{ animationDelay: '1s' }}>🥗</div>
-        <div className="absolute bottom-40 left-[8%] text-4xl float-medium opacity-40 hidden lg:block" style={{ animationDelay: '2s' }}>🍲</div>
-        <div className="absolute bottom-32 right-[10%] text-5xl float-slow opacity-50 hidden lg:block" style={{ animationDelay: '0.5s' }}>🥘</div>
-        <div className="absolute top-1/2 left-[5%] text-3xl float-slow opacity-30 hidden xl:block" style={{ animationDelay: '1.5s' }}>🌶️</div>
-        <div className="absolute top-1/3 right-[8%] text-3xl float-medium opacity-35 hidden xl:block" style={{ animationDelay: '2.5s' }}>🍚</div>
-
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-orange-500/15 via-orange-400/5 to-background"></div>
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <div className="animate-slide-up">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-poppins font-bold mb-6 leading-tight">
-              <span className="liquid-glass-text  text-glow">Ghar ka Khana,</span>
-              <br />
-              <span className="liquid-glass-text text-foreground">delivered on your schedule.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed opacity-0 animate-slide-up stagger-2">
-              Home cooked meals. Zero hassle. Scheduled drops that fit your clock.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-slide-up stagger-3">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center h-screen flex flex-col justify-end pb-32">
+          <div className="absolute bottom-0 left-0 w-full animate-slide-up bg-gradient-to-t from-black/90 via-black/40 to-transparent pt-32 pb-12 sm:pb-16">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center opacity-0 animate-slide-up stagger-3 px-6 max-w-5xl mx-auto">
               <Link
                 href="/meal-plans"
-                className="group inline-flex items-center space-x-2 bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-2xl pulse-glow btn-shine"
+                className="
+    relative overflow-hidden group
+    w-full sm:w-auto min-w-[260px]
+    inline-flex items-center justify-center gap-3
+    px-10 py-5 rounded-full
+    text-lg font-extrabold tracking-wide
+    text-white
+    bg-gradient-to-r from-[#FF6B00] via-[#FF8C2B] to-[#FF6B00]
+    shadow-[0_20px_50px_-15px_rgba(255,107,0,0.75)]
+    ring-2 ring-white/20
+    transition-all duration-300 ease-out
+    hover:scale-[1.04]
+    hover:shadow-[0_30px_70px_-15px_rgba(255,107,0,0.95)]
+    active:scale-[0.98]
+  "
               >
-                <span>Check Meal Plans</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                {/* Shine animation */}
+                <span className="
+    absolute inset-0
+    bg-gradient-to-r from-transparent via-white/40 to-transparent
+    translate-x-[-200%]
+    group-hover:translate-x-[200%]
+    transition-transform duration-700
+  " />
+
+                <span className="relative z-10">Check Meal Plans</span>
+                <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1.5" />
               </Link>
+
               <Link
                 href="https://maakhana-survey.vercel.app/"
-                className="inline-flex items-center space-x-2 glass-effect px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 gradient-border"
                 target="_blank"
+                className="
+    relative group
+    w-full sm:w-auto min-w-[260px]
+    inline-flex items-center justify-center gap-3
+    px-10 py-5 rounded-full
+    text-lg font-bold tracking-wide
+    text-white
+    backdrop-blur-xl
+    bg-white/10
+    border border-white/30
+    shadow-[0_15px_40px_-15px_rgba(255,255,255,0.3)]
+    transition-all duration-300 ease-out
+    hover:bg-white/20
+    hover:scale-[1.03]
+    hover:shadow-[0_25px_60px_-15px_rgba(255,255,255,0.4)]
+    active:scale-[0.97]
+  "
               >
                 <span>Order Food Now</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />
               </Link>
+
             </div>
           </div>
 
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        </div>
+      </section>
+
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {deliveryTimeline.map((slot, index) => (
               <div
                 key={slot.time}
@@ -425,52 +471,52 @@ export default function Home() {
               No cap. Just honest reviews.
             </p>
           </div>
-<Swiper
-  modules={[Autoplay]}
-  loop={true}
-  spaceBetween={32}
-  autoplay={{
-    delay: 1500,
-    disableOnInteraction: false,
-  }}
-  slidesPerView={1}
-  breakpoints={{
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 3,
-    },
-  }}
->
-  {testimonials.map((testimonial, index) => (
-    <SwiperSlide key={index}>
-      <div className="card-premium p-8 rounded-2xl h-full">
-        <div className="flex mb-4">
-          {[...Array(testimonial.rating)].map((_, i) => (
-            <Star
-              key={i}
-              className="w-5 h-5 fill-orange-500 text-orange-500"
-            />
-          ))}
-        </div>
+          <Swiper
+            modules={[Autoplay]}
+            loop={true}
+            spaceBetween={32}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            slidesPerView={1}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="card-premium p-8 rounded-2xl h-full">
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-5 h-5 fill-orange-500 text-orange-500"
+                      />
+                    ))}
+                  </div>
 
-        <p className="text-foreground mb-6 text-lg leading-relaxed">
-          “{testimonial.text}”
-        </p>
+                  <p className="text-foreground mb-6 text-lg leading-relaxed">
+                    “{testimonial.text}”
+                  </p>
 
-        <div>
-          <p className="font-poppins font-semibold text-foreground">
-            {testimonial.name}
-          </p>
-          <p className="text-sm text-muted-foreground">
-            {testimonial.role}
-          </p>
-        </div>
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
+                  <div>
+                    <p className="font-poppins font-semibold text-foreground">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
 
         </div>
@@ -488,66 +534,66 @@ export default function Home() {
             Get exclusive app-only discounts, track your delivery in real-time, and manage your subscription with ease.
           </p>
 
-    
-                 <div className="pt-4 border-t border-orange-200/50">
-      <p className="text-xs text-muted-foreground mb-3 font-semibold">
-        DOWNLOAD APP
-      </p>
-    
-      <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-    
-        {/* Apple Store */}
-        <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
+
+          <div className="pt-4 border-t border-orange-200/50">
+            <p className="text-xs text-muted-foreground mb-3 font-semibold">
+              DOWNLOAD APP
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+
+              {/* Apple Store */}
+              <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
           hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
           w-56 justify-center">
-    
-          <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
-            <Image
-              src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765633044/461-4616252_apple-logo-apple-computer-transparent-iphone-apple-logo_x1t7hy.png"
-              alt="Apple App Store"
-              width={48}
-              height={48}
-              className="object-contain"
-            />
-          </div>
-    
-          <div className="text-left leading-tight transition-colors duration-300">
-            <div className="text-xs text-black group-hover:text-white">
-              Download on the
-            </div>
-            <div className="text-lg font-bold text-black group-hover:text-white">
-              App Store
-            </div>
-          </div>
-        </button>
-    
-        {/* Google Play */}
-        <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
+
+                <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
+                  <Image
+                    src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765633044/461-4616252_apple-logo-apple-computer-transparent-iphone-apple-logo_x1t7hy.png"
+                    alt="Apple App Store"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                </div>
+
+                <div className="text-left leading-tight transition-colors duration-300">
+                  <div className="text-xs text-black group-hover:text-white">
+                    Download on the
+                  </div>
+                  <div className="text-lg font-bold text-black group-hover:text-white">
+                    App Store
+                  </div>
+                </div>
+              </button>
+
+              {/* Google Play */}
+              <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
           hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
           w-56 justify-center">
-    
-          <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
-            <Image
-              src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765632481/playstore_xpuxlq.jpg"
-              alt="Google Play Store"
-              width={48}
-              height={48}
-              className="object-contain"
-            />
-          </div>
-    
-          <div className="text-left leading-tight transition-colors duration-300">
-            <div className="text-xs text-black group-hover:text-white">
-              GET IT ON
+
+                <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
+                  <Image
+                    src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765632481/playstore_xpuxlq.jpg"
+                    alt="Google Play Store"
+                    width={48}
+                    height={48}
+                    className="object-contain"
+                  />
+                </div>
+
+                <div className="text-left leading-tight transition-colors duration-300">
+                  <div className="text-xs text-black group-hover:text-white">
+                    GET IT ON
+                  </div>
+                  <div className="text-lg font-bold text-black group-hover:text-white">
+                    Google Play
+                  </div>
+                </div>
+              </button>
+
             </div>
-            <div className="text-lg font-bold text-black group-hover:text-white">
-              Google Play
-            </div>
           </div>
-        </button>
-    
-      </div>
-    </div>
         </div>
       </section>
 

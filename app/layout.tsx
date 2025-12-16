@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     'home cooked meals, healthy food delivery, noida food, greater noida meals, gym meals, protein food, affordable meals, pg food',
   authors: [{ name: 'MAAKHANA' }],
 
-  
- 
+
+
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -57,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
       </body>
