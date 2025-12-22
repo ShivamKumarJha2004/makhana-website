@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 
 export default function Home() {
+  // Enhanced delivery timeline with better gradients
   const deliveryTimeline = [
     {
       icon: Sunrise,
@@ -193,7 +194,13 @@ export default function Home() {
 
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {/* Background decorations */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-radial from-orange-200/30 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-gradient-radial from-amber-200/20 to-transparent rounded-full blur-3xl" />
+      </div>
+
       <Navbar />
 
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 noise-overlay">
@@ -287,21 +294,25 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-orange-50/30 relative">
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-4">Delivery Schedule</span>
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold">Fresh Meals, <span className="text-gradient">Right On Time</span></h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {deliveryTimeline.map((slot, index) => (
               <div
                 key={slot.time}
-                className="card-premium p-6 rounded-2xl group opacity-0 animate-slide-up"
-                style={{ animationDelay: `${0.5 + index * 0.15}s` }}
+                className="card-premium p-8 rounded-3xl group opacity-0 animate-slide-up text-center"
+                style={{ animationDelay: `${0.3 + index * 0.15}s` }}
               >
-                <div className={`w-16 h-16 bg-gradient-to-br ${slot.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 icon-box-glow`}>
-                  <slot.icon className="w-8 h-8 text-black" />
+                <div className={`w-20 h-20 bg-gradient-to-br ${slot.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 icon-box-glow shadow-lg`}>
+                  <slot.icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-poppins font-bold mb-2">{slot.time}</h3>
-                <p className="text-primary font-semibold mb-2">{slot.timing}</p>
-                <p className="text-muted-foreground">{slot.description}</p>
+                <h3 className="text-2xl font-poppins font-bold mb-3">{slot.time}</h3>
+                <p className="text-primary font-bold text-lg mb-2">{slot.timing}</p>
+                <p className="text-muted-foreground leading-relaxed">{slot.description}</p>
               </div>
             ))}
           </div>

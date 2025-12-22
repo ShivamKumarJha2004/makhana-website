@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, Flame, Heart, Drumstick, Salad, Zap, Clock, Phone } from 'lucide-react';
+import { Check, Flame, Heart, Drumstick, Salad, Zap, Clock, Phone, Sparkles, ArrowRight, Star } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -105,42 +105,55 @@ export default function MealPlans() {
   ];
 
   return (
-    <div className="min-h-screen bg-background noise-overlay relative overflow-hidden">
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="orb orb-orange w-96 h-96 -top-20 -left-20 opacity-40"></div>
-        <div className="orb orb-amber w-[500px] h-[500px] top-1/4 -right-40 opacity-30 float-slow"></div>
-        <div className="orb orb-orange w-64 h-64 bottom-20 left-10 opacity-30 float-medium"></div>
+    <div className="min-h-screen bg-background relative">
+      {/* Background decorations */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-radial from-orange-200/30 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/3 -left-40 w-80 h-80 bg-gradient-radial from-amber-200/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-gradient-radial from-orange-300/15 to-transparent rounded-full blur-3xl" />
       </div>
+
       <Navbar />
 
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6">
+          <div className="inline-flex items-center gap-2 glass-light px-6 py-2.5 rounded-full mb-6 animate-fade-in-up">
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-sm font-semibold text-primary">Meal Plans</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-poppins font-bold mb-6 opacity-0 animate-fade-in-up stagger-1">
             <span className="text-gradient text-glow">Meal Plans</span> That Slap
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-          Choose your vibe. Home-style comfort or power-packed nutrition.
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto opacity-0 animate-fade-in-up stagger-2">
+            Choose your vibe. Home-style comfort or power-packed nutrition.
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-orange-500/10">
+      {/* Home Style Meals */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-orange-50/30">
         <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center space-x-4 mb-12">
-            <Heart className="w-10 h-10 text-primary" />
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-center">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center gap-3 mb-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-pink-400 to-rose-500 rounded-xl flex items-center justify-center shadow-lg icon-box-glow">
+                <Heart className="w-7 h-7 text-white" />
+              </div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4">
               Home Style Meals
             </h2>
+            <p className="text-xl text-muted-foreground">
+              Missing Ghar ka Khana? Here's your fix.
+            </p>
           </div>
-          <p className="text-center text-muted-foreground text-xl mb-12">
-            Missing Ghar ka Khana? Here's your fix.
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {homeMeals.map((meal) => (
               <div
                 key={meal.name}
-                className="card-premium rounded-2xl p-6 group"
+                className="card-premium rounded-3xl p-6 group opacity-0 animate-fade-in-up"
+                style={{ animationDelay: `${0.2 + homeMeals.indexOf(meal) * 0.1}s` }}
               >
                 {meal.badge && (
                   <div className="absolute top-4 right-4 bg-primary text-black text-xs font-bold px-3 py-1 rounded-full shimmer overflow-hidden relative">
