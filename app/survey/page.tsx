@@ -101,65 +101,47 @@ export default function Survey() {
               Get exclusive app-only discounts, track your delivery in real-time, and manage your subscription with ease.
             </p>
 
-           <div className="pt-4 border-t border-orange-200/50">
-             <p className="text-xs text-muted-foreground mb-3 font-semibold">
-               DOWNLOAD APP
-             </p>
-           
-             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-           
-               {/* Apple Store */}
-               <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
-                 hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
-                 w-56 justify-center">
-           
-                 <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
-                   <Image
-                     src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765633044/461-4616252_apple-logo-apple-computer-transparent-iphone-apple-logo_x1t7hy.png"
-                     alt="Apple App Store"
-                     width={48}
-                     height={48}
-                     className="object-contain"
-                   />
-                 </div>
-           
-                 <div className="text-left leading-tight transition-colors duration-300">
-                   <div className="text-xs text-black group-hover:text-white">
-                     Download on the
-                   </div>
-                   <div className="text-lg font-bold text-black group-hover:text-white">
-                     App Store
-                   </div>
-                 </div>
-               </button>
-           
-               {/* Google Play */}
-               <button className="group flex items-center gap-4 bg-transparent px-6 py-4 rounded-2xl 
-                 hover:bg-gray-900 transition-all transform hover:scale-105 shadow-xl 
-                 w-56 justify-center">
-           
-                 <div className="w-12 h-12 flex items-center justify-center group-hover:animate-bounce">
-                   <Image
-                     src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765632481/playstore_xpuxlq.jpg"
-                     alt="Google Play Store"
-                     width={48}
-                     height={48}
-                     className="object-contain"
-                   />
-                 </div>
-           
-                 <div className="text-left leading-tight transition-colors duration-300">
-                   <div className="text-xs text-black group-hover:text-white">
-                     GET IT ON
-                   </div>
-                   <div className="text-lg font-bold text-black group-hover:text-white">
-                     Google Play
-                   </div>
-                 </div>
-               </button>
-           
-             </div>
-           </div>
+             <div className="pt-4 border-t border-orange-200/50">
+            <p className="text-xs text-black mb-3 font-semibold text-center">
+              DOWNLOAD APP
+            </p>
+          
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+          
+              {/*  Apple App Store */}
+              <a
+                href="https://apps.apple.com/in/app/YOUR_APP_ID"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-32 h-32"
+              >
+                <Image
+                  src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765951109/apple-store.svg_hsiado.svg"
+                  alt="Apple App Store"
+                  width={256}   
+                  height={256}  
+                  className="object-contain hover:scale-110 transition-transform"
+                />
+              </a>
+          
+              {/*  Google Play Store */}
+              <a
+                href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-32 h-32"
+              >
+                <Image
+                  src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765953824/google-play-badge-logo_as6rln.svg"
+                  alt="Google Play Store"
+                  width={256}  
+                  height={256} 
+                  className="object-contain hover:scale-110 transition-transform"
+                />
+              </a>
+          
+            </div>
+          </div>
           </div>
         </div>
       </section>
