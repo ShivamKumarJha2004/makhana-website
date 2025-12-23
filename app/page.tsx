@@ -1,8 +1,6 @@
 'use client';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCards } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/effect-cards';
 import { ArrowRight, Sunrise, Utensils, Moon, Flame, Heart, Clock, DollarSign, Shield, Star, Check, X, IndianRupee, Zap, Leaf } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
