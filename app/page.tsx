@@ -89,9 +89,9 @@ export default function Home() {
               ❤️ Maakhana means "Maa ke haato ka khana"
             </span>
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight text-foreground leading-[1.1]">
-              Ghar ka Khana.<br />
+              Ghar ka Khana,<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-purple-600 animate-gradient-x">
-                Delivered on your schedule.
+                Maa ke haath jaisa.
               </span>
             </h1>
           </motion.div>

@@ -41,13 +41,10 @@ export default function Navbar(): JSX.Element {
   }, [isOpen]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 will-change-transform
-        ${isScrolled
-          ? 'bg-white/70 backdrop-blur-md shadow-sm border-b border-white/20 py-3'
-          : 'bg-transparent py-6'
-        }`}
-    >
+   <nav
+  className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 bg-white lg:bg-transparent`}
+>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
 
@@ -96,7 +93,7 @@ export default function Navbar(): JSX.Element {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 z-[101] relative group"
+            className="lg:hidden p-2 z-[201] relative group"
             aria-label="Toggle Menu"
           >
             <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-white text-black' : 'bg-white/50 backdrop-blur-md text-black'}`}>
@@ -109,13 +106,14 @@ export default function Navbar(): JSX.Element {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[100] bg-cream/95 backdrop-blur-3xl lg:hidden flex flex-col pt-24 px-6"
-          >
+         <motion.div
+  initial={{ opacity: 0, x: '100%' }}
+  animate={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: '100%' }}
+  transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+  className="fixed inset-0 z-[200] bg-white text-foreground lg:hidden flex flex-col pt-[72px] px-6 overflow-y-auto"
+>
+
             <div className="flex flex-col space-y-6">
               {navLinks.map((link, index) => (
                 <motion.div
@@ -127,7 +125,7 @@ export default function Navbar(): JSX.Element {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block text-4xl font-poppins font-bold text-foreground hover:text-primary transition-colors tracking-tight"
+                    className="block text-4xl font-poppins font-bold text-black hover:text-primary transition-colors tracking-tight"
                   >
                     {link.label}
                   </Link>
