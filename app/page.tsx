@@ -143,16 +143,17 @@ export default function Home() {
                 priority
               />
             </div>
-            {/* Mobile Image */}
-            <div className="block md:hidden absolute inset-0">
-              <Image
-                src="/mobile_poster.png"
-                alt="Delicious Healthy Food Mobile"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+           {/* Mobile Image */}
+<div className="block md:hidden absolute inset-0 flex items-center justify-center">
+  <Image
+    src="/mobile_poster.png"
+    alt="Delicious Healthy Food Mobile"
+    fill
+    priority
+    className="object-contain scale-90"
+  />
+</div>
+
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-8">
               <p className="text-white/90 text-sm font-medium tracking-widest uppercase">Fresh • Hygienic • Affordable</p>
@@ -336,47 +337,58 @@ export default function Home() {
       </section>
 
       {/* --- APP DOWNLOAD CTA --- */}
-      <section className="py-24 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto relative rounded-[3rem] bg-black overflow-hidden px-8 py-16 md:p-20 text-center">
-          {/* Background Glows */}
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-orange-600/30 rounded-full blur-[100px] animate-pulse-slow" />
-          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[100px] animate-pulse-slow delay-700" />
+      <section className="py-20 px-4 sm:px-6 overflow-hidden">
+  <div className="max-w-6xl mx-auto relative rounded-[3rem] bg-black px-6 py-14 md:p-20 text-center">
 
-          <div className="relative z-10">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Hungry? <span className="text-orange-500">Download app.</span>
-            </h2>
-            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
-              Get exclusive discounts, live tracking, and manage your subscription in one tap. Available on iOS and Android.
-            </p>
+    {/* Background Glows (desktop only full size) */}
+    <div className="hidden sm:block absolute top-0 left-1/4 w-[500px] h-[500px] bg-orange-600/30 rounded-full blur-[100px] animate-pulse-slow" />
+    <div className="hidden sm:block absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-600/30 rounded-full blur-[100px] animate-pulse-slow delay-700" />
 
-            <div className="flex flex-col sm:flex-row  justify-center items-center">
-              <a href="#" className="transform hover:scale-105 transition-transform duration-300">
-                <div className="relative w-60 h-16 sm:w-60 sm:h-20">
-                  <Image
-                    src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765951109/apple-store.svg_hsiado.svg"
-                    alt="Download on the App Store"
-                    width={200}
-                    height={300}
-                    className="object-contain"
-                  />
-                </div>
-              </a>
-              <a href="#" className="transform hover:scale-105 transition-transform duration-300">
-                <div className="relative w-48 h-16 sm:w-60 sm:h-20">
-                  <Image
-                    src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765953824/google-play-badge-logo_as6rln.svg"
-                    alt="Get it on Google Play"
-                    width={200}
-                    height={300}
-                    className="object-contain"
-                  />
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Smaller glow for mobile */}
+    <div className="sm:hidden absolute top-10 left-1/2 -translate-x-1/2 w-[260px] h-[260px] bg-orange-600/20 rounded-full blur-[80px]" />
+
+    <div className="relative z-10">
+      <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-5">
+        Hungry? <span className="text-orange-500">Download app.</span>
+      </h2>
+
+      <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10">
+        Get exclusive discounts, live tracking, and manage your subscription in one tap.
+        Available on iOS and Android.
+      </p>
+
+      {/* STORE BUTTONS */}
+      <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center">
+        <a
+          href="#"
+          className="transform hover:scale-105 transition-transform duration-300"
+        >
+          <Image
+            src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765951109/apple-store.svg_hsiado.svg"
+            alt="Download on the App Store"
+            width={180}
+            height={60}
+            className="object-contain"
+          />
+        </a>
+
+        <a
+          href="#"
+          className="transform hover:scale-105 transition-transform duration-300"
+        >
+          <Image
+            src="https://res.cloudinary.com/didkrwhbu/image/upload/v1765953824/google-play-badge-logo_as6rln.svg"
+            alt="Get it on Google Play"
+            width={180}
+            height={60}
+            className="object-contain"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <Footer />
     </div>
