@@ -4,6 +4,7 @@ import { Check, Flame, Heart, Drumstick, Salad, Zap, Clock, Phone, Sparkles, Arr
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 
 export default function MealPlans() {
   // Subscription plans based on PDF
@@ -13,6 +14,7 @@ export default function MealPlans() {
       description: 'Pure vegetarian meals all 7 days',
       price: '₹2,310 - ₹2,520',
       period: 'per week',
+      image: '/veg.png',
       features: [
         'Breakfast, Lunch & Dinner',
         '7 Days Full Coverage',
@@ -28,6 +30,7 @@ export default function MealPlans() {
       description: 'Vegetarian + Non-veg on Wed & Sun',
       price: '₹2,625 - ₹2,835',
       period: 'per week',
+      image: '/non-veg.png',
       features: [
         'Breakfast, Lunch & Dinner',
         'Non-veg on Wednesday & Sunday',
@@ -36,13 +39,14 @@ export default function MealPlans() {
         'Weekly Menu Rotation'
       ],
       dailyCost: '₹125-135',
-      badge: 'Most Popular'
+      badge: ''
     },
     {
       name: 'Gym Bro Pack (Veg)',
       description: 'High-protein, minimum 150g protein/day',
       price: '₹3,255 - ₹3,675',
       period: 'per week',
+      image: '/gym_bro_veg.png',
       features: [
         'Min 150g Protein Daily',
         '5 Eggs Breakfast Daily',
@@ -58,6 +62,7 @@ export default function MealPlans() {
       description: 'Maximum protein with chicken/fish',
       price: '₹3,885 - ₹4,410',
       period: 'per week',
+      image: '/gym_bro_non-veg.png',
       features: [
         '180-200g Chicken Breast',
         'Min 150g Protein Daily',
@@ -66,56 +71,63 @@ export default function MealPlans() {
         'Priority Delivery'
       ],
       dailyCost: '₹185-210',
-      badge: 'Max Gains'
+      badge: ''
     },
   ];
 
   // Weekly Menu from PDF
   const weeklyMenu = [
     {
-      day: 'Monday',
+      day: '1',
+      image: '/monday.png',
       breakfast: { name: 'Poha', details: '250-280g cooked with peanuts + banana/seasonal fruit' },
       lunch: { name: 'Arhar Dal + Aloo Gobhi', details: 'Rice + 2 rotis + salad' },
       dinner: { name: 'Seasonal Veg + Dal', details: '3 rotis + full bowl dal' },
       special: null
     },
     {
-      day: 'Tuesday',
+      day: '2',
+      image: '/tuesday.png',
       breakfast: { name: 'Vegetable Dalia', details: '300g soft cooked, optional ghee' },
       lunch: { name: 'Rajma + Cabbage Peas', details: 'Rice + 2 rotis' },
       dinner: { name: 'Dal Khichdi', details: 'Rice + dal-heavy, optional ghee' },
       special: null
     },
     {
-      day: 'Wednesday',
+      day: '3',
+      image: '/wednesday.png',
       breakfast: { name: 'Besan Chilla', details: '2 medium + chutney + small curd' },
       lunch: { name: 'Chole + Lauki Chana Dal', details: 'Rice + 2 rotis' },
       dinner: { name: 'Matar Mushroom + Dal', details: '3 rotis' },
       special: { type: 'nonveg', text: 'Chicken Curry (140-160g)' }
     },
     {
-      day: 'Thursday',
+      day: '4',
+      image: '/thursday.png',
       breakfast: { name: 'Masala Oats', details: '300g thick Indian style + peanuts/sprouts' },
       lunch: { name: 'Dal Makhani (light)', details: 'Seasonal veg + rice + 2 rotis' },
       dinner: { name: 'Lemon Dal + Veg', details: 'Rice + seasonal vegetables' },
       special: null
     },
     {
-      day: 'Friday',
+      day: '5',
+      image: '/friday.png',
       breakfast: { name: 'Aloo Paratha', details: '1 large shallow cooked + curd' },
       lunch: { name: 'Kadhi Pakoda + Jeera Aloo', details: 'Rice + 2 rotis' },
       dinner: { name: 'Paneer Bhurji', details: '120-140g paneer + 3 rotis + salad' },
       special: null
     },
     {
-      day: 'Saturday',
+      day: '6',
+      image: '/saturday.png',
       breakfast: { name: 'Vegetable Sandwich', details: '2 filled triangles + chutney + fruit' },
       lunch: { name: 'Mix Dal + Bhindi Fry', details: 'Rice + 2 rotis' },
       dinner: { name: 'Veg Pulao', details: 'Generous portion + raita' },
       special: null
     },
     {
-      day: 'Sunday',
+      day: '7',
+      image: '/sunday3.png',
       breakfast: { name: 'Cornflakes / Masala Oats', details: 'Milk + banana' },
       lunch: { name: 'Veg Pulao', details: 'Raita + papad' },
       dinner: { name: 'Mixed Veg Curry + Dal', details: '3 rotis + home-style' },
@@ -209,72 +221,86 @@ export default function MealPlans() {
             {weeklyMenu.map((day, index) => (
               <div
                 key={day.day}
-                className="card-premium rounded-2xl p-6 hover:scale-105 transition-transform duration-300 bg-white/5 backdrop-blur-sm border border-white/10"
+                className="card-premium rounded-2xl overflow-hidden hover:scale-105 transition-transform duration-300 bg-white border border-border shadow-lg group"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-2xl font-poppins font-bold text-gradient">
-                    {day.day}
-                  </h3>
-                  {day.special && (
-                    <div className={`px-3 py-1 rounded-full text-xs font-bold ${
-                      day.special.type === 'nonveg' 
-                        ? 'bg-red-500/20 text-red-400' 
-                        : 'bg-primary/20 text-primary'
-                    }`}>
-                      {day.special.type === 'nonveg' ? '🍗 Non-Veg' : '🌟 Special'}
-                    </div>
-                  )}
-                </div>
-
-                <div className="space-y-6">
-                  {/* Breakfast */}
-                  <div className="pb-4 border-b border-white/10">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center">
-                        <Sun className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-sm font-semibold text-primary">BREAKFAST</p>
-                    </div>
-                    <p className="font-medium mb-1">{day.breakfast.name}</p>
-                    <p className="text-sm text-muted-foreground">{day.breakfast.details}</p>
-                  </div>
-
-                  {/* Lunch */}
-                  <div className="pb-4 border-b border-white/10">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center">
-                        <Sun className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-sm font-semibold text-primary">LUNCH</p>
-                    </div>
-                    <p className="font-medium mb-1">{day.lunch.name}</p>
-                    <p className="text-sm text-muted-foreground">{day.lunch.details}</p>
-                  </div>
-
-                  {/* Dinner */}
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center">
-                        <Moon className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-sm font-semibold text-primary">DINNER</p>
-                    </div>
-                    <p className="font-medium mb-1">{day.dinner.name}</p>
-                    <p className="text-sm text-muted-foreground">{day.dinner.details}</p>
+                {/* Image Header */}
+                <div className="relative h-52 w-full overflow-hidden bg-white">
+                  <Image
+                    src={day.image}
+                    alt={`${day.day} Menu`}
+                    fill
+                    className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                    priority={index < 4}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                    <h3 className="text-xl font-poppins font-bold text-white drop-shadow-lg">
+                      {day.day}
+                    </h3>
                     {day.special && (
-                      <div className="mt-3 p-2 bg-white/5 rounded-lg">
-                        <p className="text-xs font-semibold text-amber-400 mb-1">SPECIAL ADD-ON</p>
-                        <p className="text-sm">{day.special.text}</p>
+                      <div className={`px-3 py-1 rounded-full text-xs font-bold ${
+                        day.special.type === 'nonveg' 
+                          ? 'bg-red-500 text-white' 
+                          : 'bg-primary text-white'
+                      }`}>
+                        {day.special.type === 'nonveg' ? '🍗 Non-Veg' : '🌟 Special'}
                       </div>
                     )}
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 text-center">
-                  <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                    <span>Kitchen Cost: ₹{day.day === 'Wednesday' || day.day === 'Sunday' ? '45-55' : '42-55'}</span>
+                <div className="p-6">
+
+                  <div className="space-y-5">
+                    {/* Breakfast */}
+                    <div className="pb-4 border-b border-border">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center shadow-sm">
+                          <Sun className="w-4 h-4 text-white" />
+                        </div>
+                        <p className="text-sm font-semibold text-primary">BREAKFAST</p>
+                      </div>
+                      <p className="font-semibold mb-1 text-foreground">{day.breakfast.name}</p>
+                      <p className="text-sm text-muted-foreground">{day.breakfast.details}</p>
+                    </div>
+
+                    {/* Lunch */}
+                    <div className="pb-4 border-b border-border">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center shadow-sm">
+                          <Sun className="w-4 h-4 text-white" />
+                        </div>
+                        <p className="text-sm font-semibold text-primary">LUNCH</p>
+                      </div>
+                      <p className="font-semibold mb-1 text-foreground">{day.lunch.name}</p>
+                      <p className="text-sm text-muted-foreground">{day.lunch.details}</p>
+                    </div>
+
+                    {/* Dinner */}
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center shadow-sm">
+                          <Moon className="w-4 h-4 text-white" />
+                        </div>
+                        <p className="text-sm font-semibold text-primary">DINNER</p>
+                      </div>
+                      <p className="font-semibold mb-1 text-foreground">{day.dinner.name}</p>
+                      <p className="text-sm text-muted-foreground">{day.dinner.details}</p>
+                      {day.special && (
+                        <div className="mt-3 p-3 bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg border border-amber-200">
+                          <p className="text-xs font-semibold text-amber-600 mb-1">SPECIAL ADD-ON</p>
+                          <p className="text-sm font-medium text-foreground">{day.special.text}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-border text-center">
+                    <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-green-50 px-3 py-1.5 rounded-full">
+                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                      <span className="font-medium">Kitchen Cost: ₹{day.day === 'Wednesday' || day.day === 'Sunday' ? '45-55' : '42-55'}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -323,89 +349,131 @@ export default function MealPlans() {
 
           {/* Gym Pack Daily Structure */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            <div className="card-premium rounded-2xl p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center mb-4">
-                <Egg className="w-8 h-8 text-black" />
+            <div className="card-premium rounded-2xl overflow-hidden">
+              <div className="relative h-40 w-full overflow-hidden bg-gradient-to-br from-orange-50 to-amber-50">
+                <Image
+                  src="/gym-bro-breakfast.png"
+                  alt="Gym Bro Breakfast"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Breakfast</h3>
-              <p className="text-primary font-semibold mb-2">Daily Standard</p>
-              <ul className="space-y-2 mb-4">
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span>5 Whole Eggs</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span>Carb Side (Poha/Oats/2 Brown Breads)</span>
-                </li>
-              </ul>
-              <div className="p-3 bg-white/5 rounded-lg">
-                <p className="text-sm font-semibold text-amber-400">BOOST OPTIONS</p>
-                <p className="text-sm">+2 or +4 Extra Eggs</p>
-              </div>
-            </div>
-
-            <div className="card-premium rounded-2xl p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center mb-4">
-                <Salad className="w-8 h-8 text-black" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Lunch</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="text-primary font-semibold mb-2">Vegetarian Option</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-primary" />
-                      <span>Double Dal + Soya Chunks (60g raw)</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-primary" />
-                      <span>or Paneer 200g</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-primary" />
-                      <span>2 Rotis</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p className="text-red-400 font-semibold mb-2">Non-Veg Option</p>
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-red-400" />
-                      <span>Chicken Breast Curry (180-200g raw)</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-red-400" />
-                      <span>Small Dal + 2 Rotis</span>
-                    </li>
-                  </ul>
+              <div className="p-6">
+                
+                <h3 className="text-xl font-bold mb-3">Breakfast</h3>
+                <p className="text-primary font-semibold mb-2">Daily Standard</p>
+                <ul className="space-y-2 mb-4">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary" />
+                    <span>5 Whole Eggs</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-primary" />
+                    <span>Carb Side (Poha/Oats/2 Brown Breads)</span>
+                  </li>
+                </ul>
+                <div className="p-3 bg-white/5 rounded-lg">
+                  <p className="text-sm font-semibold text-amber-400">BOOST OPTIONS</p>
+                  <p className="text-sm">+2 or +4 Extra Eggs</p>
                 </div>
               </div>
             </div>
 
-            <div className="card-premium rounded-2xl p-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center mb-4">
-                <Drumstick className="w-8 h-8 text-black" />
+            <div className="card-premium rounded-2xl overflow-hidden">
+              <div className="grid grid-cols-2 h-40 w-full overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50">
+                <div className="relative">
+                  <Image
+                    src="/gym-bro-veg-lunch.png"
+                    alt="Gym Bro Veg Lunch"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/gym-bro-non-veg-lunch.png"
+                    alt="Gym Bro Non-Veg Lunch"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Dinner</h3>
-              <p className="text-primary font-semibold mb-2">Protein Options (Choose One)</p>
-              <ul className="space-y-3 mb-4">
-                <li className="flex items-center gap-2 p-2 bg-white/5 rounded">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span>Paneer 150-200g</span>
-                </li>
-                <li className="flex items-center gap-2 p-2 bg-white/5 rounded">
-                  <Check className="w-4 h-4 text-red-400" />
-                  <span>Chicken 150g</span>
-                </li>
-                <li className="flex items-center gap-2 p-2 bg-white/5 rounded">
-                  <Check className="w-4 h-4 text-primary" />
-                  <span>Egg Curry (3 Eggs)</span>
-                </li>
-              </ul>
-              <div className="pt-4 border-t border-white/10">
-                <p className="text-sm text-muted-foreground">+ 3 Rotis + Light Vegetables</p>
+              <div className="p-6">
+                
+                <h3 className="text-xl font-bold mb-3">Lunch</h3>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-primary font-semibold mb-2">Vegetarian Option</p>
+                    <ul className="space-y-2">
+                      <li className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-primary" />
+                        <span>Double Dal + Soya Chunks (60g raw)</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-primary" />
+                        <span>or Paneer 200g</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-primary" />
+                        <span>2 Rotis</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-red-400 font-semibold mb-2">Non-Veg Option</p>
+                    <ul className="space-y-2">
+                      <li className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-red-400" />
+                        <span>Chicken Breast Curry (180-200g raw)</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <Check className="w-4 h-4 text-red-400" />
+                        <span>Small Dal + 2 Rotis</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="card-premium rounded-2xl overflow-hidden">
+              <div className="relative h-40 w-full overflow-hidden bg-gradient-to-br from-red-50 to-orange-50">
+                <Image
+                  src="/gym-bro-dinner.png"
+                  alt="Gym Bro Dinner"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent" />
+              </div>
+              <div className="p-6">
+                
+                <h3 className="text-xl font-bold mb-3">Dinner</h3>
+                <p className="text-primary font-semibold mb-2">Protein Options (Choose One)</p>
+                <ul className="space-y-3 mb-4">
+                  <li className="flex items-center gap-2 p-2 bg-white/5 rounded">
+                    <Check className="w-4 h-4 text-primary" />
+                    <span>Paneer 150-200g</span>
+                  </li>
+                  <li className="flex items-center gap-2 p-2 bg-white/5 rounded">
+                    <Check className="w-4 h-4 text-red-400" />
+                    <span>Chicken 150g</span>
+                  </li>
+                  <li className="flex items-center gap-2 p-2 bg-white/5 rounded">
+                    <Check className="w-4 h-4 text-primary" />
+                    <span>Egg Curry (3 Eggs)</span>
+                  </li>
+                </ul>
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-sm text-muted-foreground">+ 3 Rotis + Light Vegetables</p>
+                </div>
               </div>
             </div>
           </div>
@@ -458,73 +526,85 @@ export default function MealPlans() {
             {subscriptionPlans.map((plan) => (
               <div
                 key={plan.name}
-                className={`card-premium rounded-2xl p-6 relative h-full flex flex-col transition-all duration-300 hover:scale-105
+                className={`card-premium rounded-2xl overflow-hidden relative h-full flex flex-col transition-all duration-300 hover:scale-105 shadow-lg group
                   ${plan.popular ? 'border-2 border-primary shadow-xl' : ''}
-                  ${plan.highlight ? 'border-2 border-red-500 shadow-xl' : ''}`}
+                  ${plan.highlight ? 'border-2 border-red-500 shadow-xl' : 'border border-border'}`}
               >
                 {/* Badge */}
                 {plan.badge && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className={`px-4 py-1 rounded-full text-xs font-bold ${
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className={`px-4 py-1 rounded-full text-xs font-bold shadow-lg ${
                       plan.name.includes('Non-Veg') 
                         ? 'bg-red-500 text-white' 
-                        : 'bg-primary text-black'
+                        : 'bg-primary text-white'
                     }`}>
                       {plan.badge}
                     </div>
                   </div>
                 )}
 
-                {/* Popular Tag */}
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <div className="px-4 py-1 bg-primary text-black text-xs font-bold rounded-full">
-                      Most Popular
+                {/* Image Header */}
+                <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-orange-50 to-amber-50">
+                  <Image
+                    src={plan.image}
+                    alt={plan.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                  {plan.popular && (
+                    <div className="absolute top-4 right-4">
+                      <div className="px-3 py-1 bg-primary text-white rounded-full text-xs font-bold">
+                        Popular
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
 
                 {/* Header */}
-                <div className="text-center mb-6 pt-2">
-                  <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                <div className="text-center mb-6 pt-6 px-6">
+                  <h3 className="text-xl font-bold mb-2 text-foreground">{plan.name}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{plan.description}</p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full">
-                    <span className="text-xs">Daily Cost:</span>
-                    <span className="font-bold">{plan.dailyCost}</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-50 rounded-full border border-orange-200">
+                    <span className="text-xs text-muted-foreground">Daily Cost:</span>
+                    <span className="font-bold text-primary">{plan.dailyCost}</span>
                   </div>
                 </div>
 
                 {/* Price */}
-                <div className="text-center mb-6">
-                  <div className="text-3xl font-bold mb-1">{plan.price}</div>
+                <div className="text-center mb-6 px-6">
+                  <div className="text-3xl font-bold mb-1 text-foreground">{plan.price}</div>
                   <p className="text-sm text-muted-foreground">{plan.period}</p>
                 </div>
 
                 {/* Features */}
-                <div className="flex-grow mb-6">
+                <div className="flex-grow mb-6 px-6">
                   <ul className="space-y-3">
                     {plan.features.map((feature, index) => (
                       <li key={index} className="flex items-start gap-3">
-                        <Check className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
+                        <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-foreground">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {/* CTA */}
-                <Link
-                  href="https://maakhana-survey.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-auto w-full text-center px-4 py-3 rounded-xl font-semibold transition-all duration-300
-                    ${plan.name.includes('Gym') 
-                      ? 'bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white' 
-                      : 'bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-black'
-                    }`}
-                >
-                  Subscribe Now
-                </Link>
+                <div className="px-6 pb-6 mt-auto">
+                  <Link
+                    href="https://maakhana-survey.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block w-full text-center px-4 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl
+                      ${plan.name.includes('Gym') 
+                        ? 'bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white' 
+                        : 'bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white'
+                      }`}
+                  >
+                    Subscribe Now
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

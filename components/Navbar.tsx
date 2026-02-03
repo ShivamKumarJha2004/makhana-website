@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, Phone, Mail } from 'lucide-react';
@@ -23,6 +24,7 @@ const navLinks: NavLink[] = [
 export default function Navbar(): JSX.Element {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -68,16 +70,24 @@ export default function Navbar(): JSX.Element {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className={`flex items-center rounded-full px-2 py-1.5 transition-all duration-300 ${isScrolled ? 'bg-secondary/50 border border-border/50' : 'bg-white/40 border border-white/40 backdrop-blur-sm'}`}>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="relative px-5 py-2.5 text-sm font-semibold text-foreground/80 hover:text-primary transition-colors group"
-                >
-                  {link.label}
-                  <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary rounded-full transition-all duration-300 group-hover:w-1/2 opacity-0 group-hover:opacity-100" />
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+  const isActive =
+    link.href === '/'
+      ? pathname === '/'
+      : pathname.startsWith(link.href);
+  return (
+    <Link
+      key={link.href}
+      href={link.href}
+      className={`relative px-5 py-2.5 text-sm font-semibold transition-colors group 
+        ${isActive ? 'text-primary' : 'text-foreground/80 hover:text-primary'}`}
+    >
+      {link.label}
+      <span className={`absolute bottom-1.5 left-1/2 -translate-x-1/2 h-0.5 bg-primary rounded-full transition-all duration-300 
+        ${isActive ? 'w-1/2 opacity-100' : 'w-0 opacity-0 group-hover:w-1/2 group-hover:opacity-100'}`} />
+    </Link>
+  );
+})}
             </div>
 
             <div className="hidden xl:flex items-center gap-4 pl-4 border-l border-border/50">
@@ -115,22 +125,28 @@ export default function Navbar(): JSX.Element {
 >
 
             <div className="flex flex-col space-y-6">
-              {navLinks.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + index * 0.1 }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block text-4xl font-poppins font-bold text-black hover:text-primary transition-colors tracking-tight"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
+              {navLinks.map((link, index) => {
+  const isActive =
+    link.href === '/'
+      ? pathname === '/'
+      : pathname.startsWith(link.href);
+  return (
+    <motion.div
+      key={link.href}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 + index * 0.1 }}
+    >
+      <Link
+        href={link.href}
+        onClick={() => setIsOpen(false)}
+        className={`block text-4xl font-poppins font-bold transition-colors tracking-tight ${isActive ? 'text-primary' : 'text-black hover:text-primary'}`}
+      >
+        {link.label}
+      </Link>
+    </motion.div>
+  );
+})}
             </div>
 
             <motion.div
