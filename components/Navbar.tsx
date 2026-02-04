@@ -59,7 +59,7 @@ export default function Navbar(): JSX.Element {
                 width={60}
                 height={60}
                 priority
-                className="object-contain w-full h-full drop-shadow-md"
+                className="object-contain w-full h-full drop-shadow-md rounded-full"
               />
             </div>
             <span className={`text-xl md:text-2xl font-poppins font-bold tracking-tight transition-colors duration-300 ${isScrolled ? 'text-foreground' : 'text-foreground'}`}>

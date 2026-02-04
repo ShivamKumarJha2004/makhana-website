@@ -4,12 +4,7 @@ import { Repeat, CalendarDays, CalendarRange } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const plans = [
-  {
-    title: 'Daily Plan',
-    desc: 'Fresh meals every day. No commitment. Total flexibility.',
-    icon: Repeat,
-    color: 'from-orange-300 to-orange-400',
-  },
+
   {
     title: 'Weekly Plan',
     desc: '7 days of hassle-free meals. Save more, worry less.',
