@@ -15,7 +15,7 @@ export default function MealPlans() {
     {
       name: 'Standard Veg Plan',
       description: 'Pure vegetarian meals all 7 days',
-      price: '₹2,310 - ₹2,520',
+      price: '₹ - ₹',
       period: 'per week',
       image: '/veg.png',
       category: 'veg',
@@ -26,13 +26,13 @@ export default function MealPlans() {
         'Free Delivery',
         'Weekly Menu Rotation'
       ],
-      dailyCost: '₹110-120',
+      dailyCost: '₹',
       popular: true,
     },
     {
       name: 'Standard Non-Veg Plan',
       description: 'Vegetarian + Non-veg on Wed & Sun',
-      price: '₹2,625 - ₹2,835',
+      price: '₹ - ₹',
       period: 'per week',
       image: '/non-veg.png',
       category: 'nonveg',
@@ -43,13 +43,13 @@ export default function MealPlans() {
         'Free Delivery',
         'Weekly Menu Rotation'
       ],
-      dailyCost: '₹125-135',
+      dailyCost: '₹',
       badge: ''
     },
     {
       name: 'Gym Bro Pack (Veg)',
       description: 'High-protein, minimum 150g protein/day',
-      price: '₹3,255 - ₹3,675',
+      price: '₹  ₹',
       period: 'per week',
       image: '/gym_bro_veg.png',
       category: 'gym',
@@ -60,13 +60,13 @@ export default function MealPlans() {
         'Customizable Options',
         'Priority Delivery'
       ],
-      dailyCost: '₹155-175',
+      dailyCost: '₹',
       highlight: true
     },
     {
       name: 'Gym Bro Pack (Non-Veg)',
       description: 'Maximum protein with chicken/fish',
-      price: '₹3,885 - ₹4,410',
+      price: '₹ - ₹',
       period: 'per week',
       image: '/gym_bro_non-veg.png',
       category: 'gym',
@@ -77,7 +77,7 @@ export default function MealPlans() {
         'Customizable Options',
         'Priority Delivery'
       ],
-      dailyCost: '₹185-210',
+      dailyCost: '₹',
       badge: ''
     },
   ];
@@ -467,12 +467,7 @@ export default function MealPlans() {
                       </div>
                     </div>
 
-                    <div className="mt-6 pt-4 border-t border-border text-center">
-                      <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-green-50 px-3 py-1.5 rounded-full">
-                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                        <span className="font-medium">Kitchen Cost: ₹{day.day === 'Wednesday' || day.day === 'Sunday' ? '45-55' : '42-55'}</span>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               ))}
