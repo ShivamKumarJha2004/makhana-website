@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Instagram, Facebook, Twitter, Mail, MapPin, Phone, ArrowUpRight, Heart } from 'lucide-react';
+import { Instagram, Facebook,  Mail, MapPin, Phone, ArrowUpRight, Heart } from 'lucide-react';
+import { FaXTwitter } from "react-icons/fa6";
 import Image from 'next/image';
 
 export default function Footer() {
@@ -17,7 +18,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: Instagram, href: 'https://instagram.com/maakhana', label: 'Instagram', gradient: 'hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500' },
     { icon: Facebook, href: 'https://facebook.com/maakhana', label: 'Facebook', gradient: 'hover:bg-blue-600' },
-    { icon: Twitter, href: 'https://twitter.com/maakhana', label: 'Twitter', gradient: 'hover:bg-sky-500' },
+   { icon: FaXTwitter, href: "https://x.com/maakhana", label: "X",  gradient: "hover:bg-black hover:text-white transition-colors duration-200"}
   ];
 
   return (

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Send, MessageSquare, Clock, Instagram, Facebook, Sparkles, ArrowRight, CheckCircle } from 'lucide-react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+import { FaWhatsapp, FaX, FaXTwitter } from 'react-icons/fa6';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -46,8 +47,8 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
-      value: "hello@maakhana.com",
-      link: "mailto:hello@maakhana.com",
+      value: "maakhanafoodservice@gmail.com",
+      link: "mailto:maakhanafoodservice@gmail.com",
       desc: "We reply within 24 hours",
       color: "from-blue-500 to-indigo-500"
     },
@@ -60,7 +61,7 @@ export default function ContactPage() {
       color: "from-orange-500 to-amber-500"
     },
     {
-      icon: <MessageSquare className="w-6 h-6" />,
+      icon: <FaWhatsapp className="w-6 h-6" />,
       title: "WhatsApp",
       value: "Chat with us",
       link: "https://wa.me/919315709293",
@@ -230,7 +231,7 @@ export default function ContactPage() {
                 Call Us
               </Link>
               <Link
-                href="mailto:hello@maakhana.com"
+                href="mailto:maakhanafoodservice@gmail.com.com"
                 className="inline-flex items-center justify-center gap-2 glass-medium border-2 border-foreground/20 px-6 py-3 rounded-xl font-bold transition-all duration-300 hover:scale-105"
               >
                 <Mail className="w-5 h-5" />
@@ -285,7 +286,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3.5 rounded-xl border border-border bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                      placeholder="+91 XXXXX XXXXX"
+                      placeholder="+91 9315709293"
                     />
                   </div>
                 </div>
@@ -302,7 +303,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3.5 rounded-xl border border-border bg-card focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                    placeholder="your.email@example.com"
+                    placeholder="maakhanafoodservice@gmail.com"
                   />
                 </div>
 
@@ -417,12 +418,12 @@ export default function ContactPage() {
                     <Instagram className="w-5 h-5" />
                     Instagram
                   </Link>
-                  <Link
+                   <Link
                     href="#"
-                    className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
+                    className="flex-1 flex items-center justify-center gap-2 bg-black text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
                   >
-                    <Facebook className="w-5 h-5" />
-                    Facebook
+                    <FaXTwitter className="w-5 h-5" />
+                    
                   </Link>
                 </div>
               </div>
